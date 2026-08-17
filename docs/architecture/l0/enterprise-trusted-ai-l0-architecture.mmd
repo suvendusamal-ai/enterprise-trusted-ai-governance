@@ -1,0 +1,60 @@
+flowchart LR
+    BUSINESS_OPS["Business Operations<br/>Banking Operations Analyst<br/>Banking Operations Manager"]
+    GOVERNANCE_RISK["Governance & Risk<br/>Data Steward<br/>AI Governance / Model Risk Officer<br/>Compliance / Risk Officer"]
+    ASSURANCE["Independent Assurance<br/>Internal Auditor"]
+    SOURCES["1. Enterprise Banking Sources<br/>Customers · Accounts · Payments · Exceptions<br/>Operations · Reference Data · Policies"]
+
+    subgraph DATA["2. Governed Data Foundation — Governance Starts at Bronze"]
+        BRONZE["Bronze<br/>Governed Raw Data"]
+        SILVER["Silver<br/>Validated · Standardized · Protected"]
+        GOLD["Gold<br/>Certified Data · Governed Metrics"]
+        BRONZE --> SILVER --> GOLD
+    end
+
+    subgraph INTELLIGENCE["3. Trusted Enterprise Intelligence"]
+        SEMANTIC["Semantic Intelligence<br/>Governed Definitions & Metrics"]
+        KNOWLEDGE["Governed Knowledge<br/>Approved Evidence · Governed Retrieval · Citations"]
+    end
+
+    AI["4. Governed AI<br/>Authorized Context · Evaluation · Groundedness"]
+    AGENT["5. Controlled Agentic AI<br/>Trusted Banking Operations AI Agent<br/>Delegated Authority · Approved Tools"]
+    HUMAN["Human Approval / Accountability<br/>Where Required<br/>Recommend ≠ Approve ≠ Execute"]
+
+    subgraph OUTCOME["6. Governed Outcome"]
+        OUTPUT["Output Governance<br/>Protect · Validate · Abstain · Escalate"]
+        RESPONSE["Trusted Response<br/>Governed Artifact"]
+        OUTPUT --> RESPONSE
+    end
+
+    AUDIT["7. Evidence, Observability & Audit<br/>Correlated Evidence · Decision Reconstruction"]
+    GOVERNANCE["Enterprise Governance Control Plane<br/>Classification & Protection · Quality & Certification · Identity & Access<br/>Policy · AI Governance · Agent Authorization · Human Approval · Risk & Compliance"]
+
+    SOURCES --> BRONZE
+    GOLD --> SEMANTIC
+    SOURCES --> KNOWLEDGE
+    SEMANTIC --> AI
+    KNOWLEDGE -->|"Re-evaluate authorization for AI context"| AI
+    AI --> AGENT
+    AGENT --> HUMAN
+    HUMAN -->|"Approval where required"| OUTPUT
+    AGENT -->|"No approval required within delegated authority"| OUTPUT
+    RESPONSE --> AUDIT
+
+    BUSINESS_OPS -->|"Requests trusted assistance"| AGENT
+    RESPONSE -->|"Receives governed response"| BUSINESS_OPS
+    GOVERNANCE_RISK --> GOVERNANCE
+    ASSURANCE --> AUDIT
+
+    GOVERNANCE -. "spans trusted lifecycle" .-> BRONZE
+    GOVERNANCE -. "spans trusted lifecycle" .-> INTELLIGENCE
+    GOVERNANCE -. "spans trusted lifecycle" .-> AI
+    GOVERNANCE -. "spans trusted lifecycle" .-> AGENT
+    GOVERNANCE -. "spans trusted lifecycle" .-> OUTPUT
+
+    BRONZE -. "evidence" .-> AUDIT
+    GOLD -. "evidence" .-> AUDIT
+    INTELLIGENCE -. "evidence" .-> AUDIT
+    AI -. "evidence" .-> AUDIT
+    AGENT -. "evidence" .-> AUDIT
+    HUMAN -. "decision evidence" .-> AUDIT
+    OUTPUT -. "outcome evidence" .-> AUDIT
