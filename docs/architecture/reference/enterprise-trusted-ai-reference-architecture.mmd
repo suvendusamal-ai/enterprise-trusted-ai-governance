@@ -1,0 +1,91 @@
+flowchart TB
+    PERSONAS["Business / Governance Personas<br/>Operations Analyst · Operations Manager · Data Steward<br/>AI Governance / Model Risk · Compliance / Risk · Internal Auditor"]
+    IDCTX["Identity & Purpose Context"]
+
+    subgraph SOURCE_PLANE["Plane A — Source & Ingestion"]
+        SOURCES["Source Systems<br/>Customer · Account · Payment · Exceptions · SLA / Operations · Reference Data"]
+        DOCSRC["Enterprise Policy / Document Sources"]
+    end
+
+    subgraph DATA_PLANE["Plane B — Governed Data"]
+        BRONZE["Bronze — Governed Raw Data<br/>Provenance · Discovery · Classification · Restricted Access"]
+        SILVER["Silver — Governed Trusted Data<br/>Validation · Quality · Quarantine · Minimization · Protection"]
+        GOLD["Gold — Governed Business Data<br/>Certification · Definitions · Metrics · Least Privilege"]
+    end
+
+    subgraph INTELLIGENCE_PLANE["Plane C — Semantic & Knowledge"]
+        SEMANTIC["Semantic Intelligence<br/>Governed Terms · Metrics · Versions · Authorization Inheritance"]
+        KNOWLEDGE["Enterprise Knowledge<br/>Authority · Lifecycle · AI Eligibility · Retrieval Authorization<br/>Evidence, Not Instruction"]
+        KRETRIEVAL["Governed Knowledge Retrieval<br/>Authorization · Eligibility · Authority / Lifecycle Validation<br/>Approved Evidence · Citation / Source Context"]
+    end
+
+    subgraph INPUT_PLANE["Input & Prompt Governance"]
+        INPUT["Validate Input<br/>Identity / Persona / Purpose<br/>Injection & Malicious Instruction Controls<br/>Safe Logging"]
+    end
+
+    subgraph AI_PLANE["AI Governance Plane"]
+        AIGOV["AI Governance<br/>Asset · Model / Prompt Versions · Purpose · Risk · Approval<br/>Evaluation · Groundedness · Monitoring"]
+        AI["Governed AI Reasoning"]
+    end
+
+    subgraph AGENT_PLANE["Agentic AI Plane"]
+        AGENT["Trusted Banking Operations AI / Agentic AI<br/>Approved Purpose · Domains · Delegated Authority<br/>Recommend ≠ Approve ≠ Execute"]
+        TOOLS["Tool / Action Authorization<br/>Execution-Time Decision · Human Approval · Denied Actions"]
+    end
+
+    subgraph OUTPUT_PLANE["Output Governance Plane"]
+        OUTPUT["Output Governance<br/>Sensitivity · Recipient Authorization · Groundedness · Citations<br/>Mask · Redact · Block · Abstain · Escalate"]
+        RESPONSE["Trusted Response<br/>Governed Artifact"]
+    end
+
+    subgraph CROSS_CUTTING["Cross-Cutting Enterprise Planes"]
+        CONTROL["Governance Control Plane<br/>Classification · Policy · Authorization · Quality · Protection<br/>Certification · AI Approval · Agent Authorization · Human Approval"]
+        AUDIT["Observability / Evidence / Audit Plane<br/>Correlation · Lineage · Control Evidence · AI / Agent / Tool Evidence<br/>Human Decisions · Output Disposition · Audit Reconstruction"]
+    end
+
+    PERSONAS --> IDCTX
+    IDCTX --> INPUT
+    SOURCES -->|"TB-01"| BRONZE
+    BRONZE -->|"TB-02"| SILVER
+    SILVER -->|"TB-03"| GOLD
+    GOLD -->|"TB-04"| SEMANTIC
+    DOCSRC --> KNOWLEDGE
+    KNOWLEDGE -->|"TB-05"| KRETRIEVAL
+    KRETRIEVAL -->|"TB-06<br/>User · Purpose · Context · Minimization"| AI
+    GOLD -->|"TB-06"| AI
+    SEMANTIC -->|"TB-06"| AI
+    INPUT --> AIGOV
+    AIGOV --> AI
+    AI -->|"TB-07"| AGENT
+    AGENT -->|"TB-08"| TOOLS
+    TOOLS -->|"Authorized result / recommendation"| AGENT
+    AGENT -->|"TB-09"| OUTPUT
+    OUTPUT --> RESPONSE
+    RESPONSE -->|"TB-10"| AUDIT
+
+    CONTROL -. spans and governs .-> BRONZE
+    CONTROL -. spans and governs .-> SILVER
+    CONTROL -. spans and governs .-> GOLD
+    CONTROL -. spans and governs .-> SEMANTIC
+    CONTROL -. spans and governs .-> KNOWLEDGE
+    CONTROL -. spans and governs .-> KRETRIEVAL
+    CONTROL -. spans and governs .-> INPUT
+    CONTROL -. spans and governs .-> AIGOV
+    CONTROL -. spans and governs .-> AGENT
+    CONTROL -. spans and governs .-> TOOLS
+    CONTROL -. spans and governs .-> OUTPUT
+
+    SOURCES -. evidence .-> AUDIT
+    DOCSRC -. evidence .-> AUDIT
+    BRONZE -. evidence .-> AUDIT
+    SILVER -. evidence .-> AUDIT
+    GOLD -. evidence .-> AUDIT
+    SEMANTIC -. evidence .-> AUDIT
+    KNOWLEDGE -. evidence .-> AUDIT
+    KRETRIEVAL -. evidence .-> AUDIT
+    INPUT -. evidence .-> AUDIT
+    AIGOV -. evidence .-> AUDIT
+    AI -. evidence .-> AUDIT
+    AGENT -. evidence .-> AUDIT
+    TOOLS -. evidence .-> AUDIT
+    OUTPUT -. evidence .-> AUDIT
