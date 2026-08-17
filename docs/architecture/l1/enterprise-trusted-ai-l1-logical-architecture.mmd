@@ -1,0 +1,129 @@
+flowchart LR
+    BUSINESS_OPS["Business Operations<br/>Banking Operations Analyst · Banking Operations Manager"]
+    GOVERNANCE_RISK["Governance & Risk<br/>Data Steward · AI Governance / Model Risk Officer<br/>Compliance / Risk Officer"]
+    ASSURANCE["Independent Assurance<br/>Internal Auditor"]
+
+    subgraph SOURCE["L1-01 — Source & Landing"]
+        STRUCT_SRC["Structured Banking Sources<br/>Customer · Account · Payment · Exception · SLA · Reference"]
+        DOC_SRC["Enterprise Policy / Procedure Documents"]
+        LANDING["Governed Landing<br/>Source · File · Run · Ingestion Metadata"]
+        DOC_LANDING["Governed Document Landing<br/>Source · Provenance · File · Document / Version Identity"]
+    end
+
+    subgraph DATA["Governed Data"]
+        BRONZE["L1-02 — Bronze Governed Raw Data<br/>Governance Begins Here"]
+        SILVER["L1-03 — Silver Trusted Data<br/>Validate · Standardize · Minimize · Protect"]
+        QUARANTINE["Quarantine<br/>Invalid / Unfit Records"]
+        GOLD["L1-04 — Gold Business Data<br/>Certified Assets · Governed Metrics"]
+    end
+
+    subgraph INTELLIGENCE["Trusted Enterprise Intelligence"]
+        SEMANTIC["L1-05 — Semantic Intelligence<br/>Snowflake Semantic Views"]
+        DOC_REG["L1-06 — Project-Governed Document Registry<br/>Authority · Approval · Version · Lifecycle · AI Eligibility"]
+        PARSE["AI_PARSE_DOCUMENT<br/>Logical Document Parsing"]
+        PARSED["Governed Parsed Content<br/>Source / Version / Classification Inheritance"]
+        KNOWLEDGE["Governed Enterprise Knowledge<br/>Registry Metadata + Eligible Parsed Content"]
+        SEARCH["Governed Knowledge Retrieval / Cortex Search<br/>Owner-Rights Service · Explicit TB-05 Authorization<br/>Filters + Segmented Corpora + Citations"]
+    end
+
+    subgraph AI_DOMAIN["L1-07 — AI Governance & Reasoning"]
+        INPUT["Input Governance<br/>Identity · Persona · Purpose · Injection Controls"]
+        CONTEXT["AI Context Admission<br/>Authorization · Eligibility · Minimization"]
+        AI["Governed Cortex AI Reasoning<br/>AI / Prompt Registry · Evaluation · Groundedness"]
+    end
+
+    subgraph AGENT_DOMAIN["L1-08 — Agentic AI & Controlled Tools"]
+        AGENT["Trusted Banking Operations Agent<br/>Snowflake Cortex Agent<br/>Recommend ≠ Approve ≠ Execute"]
+        STRUCT_TOOL["Tool A — Structured Operations Intelligence"]
+        KNOW_TOOL["Tool B — Governed Policy Knowledge"]
+        GOV_CHECK["Tool C — Governance Control Check"]
+        EXEC_AUTH["Execution-Time Authorization"]
+        HUMAN["Human Approval<br/>Where Required"]
+        ACTION["Tool D — Controlled Action / Escalation<br/>Conceptual Only"]
+    end
+
+    subgraph OUTCOME["L1-09 — Output Governance"]
+        RECOMMEND["Agent Recommendation"]
+        OUTPUT["Output Governance Gateway<br/>Guardrails + Deterministic / Project Checks"]
+        RESPONSE["Trusted Response<br/>Governed Artifact"]
+    end
+
+    subgraph EVIDENCE["L1-10 — Observability, Evidence & Audit"]
+        NATIVE["Native Snowflake Evidence<br/>Access History · Lineage · Quality · Policy Metadata"]
+        OBS["AI / Agent Observability<br/>Invocation · Agent · Tool Traces"]
+        PROJECT["Project Governance Evidence<br/>Control · Decision · Approval · Disposition · Correlation"]
+        AUDIT["Audit Reconstruction<br/>Source to Outcome"]
+    end
+
+    CONTROL["Enterprise Governance Control Plane<br/>Horizon-Aligned Governance · RBAC · Classification / Tags<br/>Protection · Data Quality · Lineage / Access History · AI / Agent Governance"]
+
+    STRUCT_SRC --> LANDING
+    DOC_SRC --> DOC_LANDING
+    LANDING -->|"TB-01"| BRONZE
+    BRONZE -->|"TB-02 PASS"| SILVER
+    BRONZE -->|"TB-02 QUARANTINE"| QUARANTINE
+    SILVER -->|"TB-03"| GOLD
+    GOLD -->|"TB-04"| SEMANTIC
+
+    DOC_LANDING --> DOC_REG
+    DOC_LANDING --> PARSE
+    PARSE --> PARSED
+    DOC_REG -. "persistent document identity / version" .-> PARSED
+    DOC_REG --> KNOWLEDGE
+    PARSED --> KNOWLEDGE
+    KNOWLEDGE -->|"TB-05 requester + purpose authorization"| SEARCH
+
+    BUSINESS_OPS --> INPUT
+    INPUT --> AGENT
+    AGENT --> STRUCT_TOOL
+    STRUCT_TOOL --> SEMANTIC
+    AGENT --> KNOW_TOOL
+    KNOW_TOOL --> SEARCH
+    SEMANTIC -->|"TB-06"| CONTEXT
+    SEARCH -->|"TB-06 re-authorize for invocation"| CONTEXT
+    INPUT --> CONTEXT
+    CONTEXT --> AI
+    AI -->|"TB-07"| AGENT
+
+    AGENT -->|"TB-08 proposed action"| GOV_CHECK
+    GOV_CHECK --> EXEC_AUTH
+    EXEC_AUTH -->|"Approval required"| HUMAN
+    HUMAN --> ACTION
+    EXEC_AUTH -->|"Within delegated authority"| ACTION
+
+    AGENT --> RECOMMEND
+    RECOMMEND -->|"TB-09"| OUTPUT
+    OUTPUT --> RESPONSE
+    RESPONSE -->|"TB-10"| PROJECT
+
+    GOVERNANCE_RISK --> CONTROL
+    ASSURANCE --> AUDIT
+    RESPONSE --> BUSINESS_OPS
+
+    CONTROL -. "cross-cutting governance" .-> BRONZE
+    CONTROL -. "cross-cutting governance" .-> SILVER
+    CONTROL -. "cross-cutting governance" .-> GOLD
+    CONTROL -. "cross-cutting governance" .-> SEMANTIC
+    CONTROL -. "cross-cutting governance" .-> DOC_LANDING
+    CONTROL -. "cross-cutting governance" .-> DOC_REG
+    CONTROL -. "cross-cutting governance" .-> KNOWLEDGE
+    CONTROL -. "cross-cutting governance" .-> SEARCH
+    CONTROL -. "cross-cutting governance" .-> CONTEXT
+    CONTROL -. "cross-cutting governance" .-> AI
+    CONTROL -. "cross-cutting governance" .-> AGENT
+    CONTROL -. "cross-cutting governance" .-> EXEC_AUTH
+    CONTROL -. "cross-cutting governance" .-> OUTPUT
+
+    BRONZE -. evidence .-> NATIVE
+    SILVER -. evidence .-> NATIVE
+    GOLD -. evidence .-> NATIVE
+    SEMANTIC -. evidence .-> NATIVE
+    SEARCH -. evidence .-> PROJECT
+    AI -. evidence .-> OBS
+    AGENT -. evidence .-> OBS
+    EXEC_AUTH -. evidence .-> PROJECT
+    HUMAN -. decision evidence .-> PROJECT
+    OUTPUT -. disposition evidence .-> PROJECT
+    NATIVE --> AUDIT
+    OBS --> AUDIT
+    PROJECT --> AUDIT
