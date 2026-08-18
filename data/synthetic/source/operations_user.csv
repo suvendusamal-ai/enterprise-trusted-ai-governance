@@ -1,0 +1,26 @@
+operations_user_id,team_id,display_name,business_persona,region,employment_status
+USER_SYN_001_MGR,TEAM_SYN_001,Synthetic Manager 01,Banking Operations Manager,NA,ACTIVE
+USER_SYN_001_A01,TEAM_SYN_001,Synthetic Analyst 01-01,Banking Operations Analyst,NA,ACTIVE
+USER_SYN_001_A02,TEAM_SYN_001,Synthetic Analyst 01-02,Banking Operations Analyst,NA,ACTIVE
+USER_SYN_001_A03,TEAM_SYN_001,Synthetic Analyst 01-03,Banking Operations Analyst,NA,ACTIVE
+USER_SYN_001_A04,TEAM_SYN_001,Synthetic Analyst 01-04,Banking Operations Analyst,NA,ACTIVE
+USER_SYN_002_MGR,TEAM_SYN_002,Synthetic Manager 02,Banking Operations Manager,EMEA,ACTIVE
+USER_SYN_002_A01,TEAM_SYN_002,Synthetic Analyst 02-01,Banking Operations Analyst,EMEA,ACTIVE
+USER_SYN_002_A02,TEAM_SYN_002,Synthetic Analyst 02-02,Banking Operations Analyst,EMEA,ACTIVE
+USER_SYN_002_A03,TEAM_SYN_002,Synthetic Analyst 02-03,Banking Operations Analyst,EMEA,ACTIVE
+USER_SYN_002_A04,TEAM_SYN_002,Synthetic Analyst 02-04,Banking Operations Analyst,EMEA,ACTIVE
+USER_SYN_003_MGR,TEAM_SYN_003,Synthetic Manager 03,Banking Operations Manager,APAC,ACTIVE
+USER_SYN_003_A01,TEAM_SYN_003,Synthetic Analyst 03-01,Banking Operations Analyst,APAC,ACTIVE
+USER_SYN_003_A02,TEAM_SYN_003,Synthetic Analyst 03-02,Banking Operations Analyst,APAC,ACTIVE
+USER_SYN_003_A03,TEAM_SYN_003,Synthetic Analyst 03-03,Banking Operations Analyst,APAC,ACTIVE
+USER_SYN_003_A04,TEAM_SYN_003,Synthetic Analyst 03-04,Banking Operations Analyst,APAC,ACTIVE
+USER_SYN_004_MGR,TEAM_SYN_004,Synthetic Manager 04,Banking Operations Manager,LATAM,ACTIVE
+USER_SYN_004_A01,TEAM_SYN_004,Synthetic Analyst 04-01,Banking Operations Analyst,LATAM,ACTIVE
+USER_SYN_004_A02,TEAM_SYN_004,Synthetic Analyst 04-02,Banking Operations Analyst,LATAM,ACTIVE
+USER_SYN_004_A03,TEAM_SYN_004,Synthetic Analyst 04-03,Banking Operations Analyst,LATAM,ACTIVE
+USER_SYN_004_A04,TEAM_SYN_004,Synthetic Analyst 04-04,Banking Operations Analyst,LATAM,ACTIVE
+USER_SYN_005_MGR,TEAM_SYN_005,Synthetic Manager 05,Banking Operations Manager,GLOBAL,ACTIVE
+USER_SYN_005_A01,TEAM_SYN_005,Synthetic Analyst 05-01,Banking Operations Analyst,GLOBAL,ACTIVE
+USER_SYN_005_A02,TEAM_SYN_005,Synthetic Analyst 05-02,Banking Operations Analyst,GLOBAL,ACTIVE
+USER_SYN_005_A03,TEAM_SYN_005,Synthetic Analyst 05-03,Banking Operations Analyst,GLOBAL,ACTIVE
+USER_SYN_005_A04,TEAM_SYN_005,Synthetic Analyst 05-04,Banking Operations Analyst,GLOBAL,ACTIVE

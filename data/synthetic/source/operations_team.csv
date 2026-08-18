@@ -1,0 +1,6 @@
+team_id,team_name,region,manager_id,team_status
+TEAM_SYN_001,Synthetic North America Payment Operations,NA,USER_SYN_001_MGR,ACTIVE
+TEAM_SYN_002,Synthetic Europe Payment Operations,EMEA,USER_SYN_002_MGR,ACTIVE
+TEAM_SYN_003,Synthetic Asia Pacific Payment Operations,APAC,USER_SYN_003_MGR,ACTIVE
+TEAM_SYN_004,Synthetic Latin America Payment Operations,LATAM,USER_SYN_004_MGR,ACTIVE
+TEAM_SYN_005,Synthetic Global Payment Operations,GLOBAL,USER_SYN_005_MGR,ACTIVE

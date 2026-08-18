@@ -42,4 +42,14 @@ All content must be synthetic. Real banking or customer data and credentials or 
 
 ## Current Status
 
-**G2.1 — Data model and generation design only. No datasets have been generated yet.**
+**G2.2 — Deterministic synthetic source data and governed knowledge documents generated.**
+
+## Regeneration
+
+From the repository root, use the project-local environment:
+
+```powershell
+.\.venv\Scripts\python.exe src\utilities\generate_synthetic_banking_data.py
+```
+
+The generator reads `config/synthetic_data_generation.yaml` and replaces only the approved synthetic source, document, manifest, metadata, and validation artifacts. Use the same configuration to reproduce byte-identical outputs.

@@ -1,0 +1,29 @@
+seed: 20260315
+synthetic_reference_date: 2026-03-15
+history_days: 120
+investigation_week:
+  start_date: 2026-03-09
+  end_date: 2026-03-15
+volumes:
+  customer: 1000
+  account: 1500
+  payment: 25000
+  payment_exception: 2500
+  sla_event: 2500
+  operations_team: 5
+  operations_user: 25
+  reference_exception_reason: 12
+  reference_payment_threshold: 4
+  governance_reference: 24
+spike:
+  investigation_high_value_weight: 2.5
+  historical_high_value_weight: 1.4
+  signature:
+    processing_system: SYN_PAY_SYS_2
+    payment_channels:
+      - ONLINE
+    exception_reason_codes:
+      - R002
+      - R007
+    concentration_weight: 3.0
+synthetic_disclaimer: "SYNTHETIC DEMONSTRATION CONTENT — contains no real customer or banking information."

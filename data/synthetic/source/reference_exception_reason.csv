@@ -1,0 +1,13 @@
+exception_reason_code,exception_category,business_definition,default_severity,manual_review_default,active_flag,effective_date,expiry_date
+R001,Validation,Payment instruction failed validation,MEDIUM,TRUE,TRUE,2024-01-01,
+R002,Liquidity,Insufficient synthetic available funds,HIGH,TRUE,TRUE,2024-01-01,
+R003,Routing,Beneficiary routing information requires correction,MEDIUM,TRUE,TRUE,2024-01-01,
+R004,Cutoff,Payment missed the processing cutoff,LOW,FALSE,TRUE,2024-01-01,
+R005,Sanctions Screening,Synthetic screening review pending,HIGH,TRUE,TRUE,2024-01-01,
+R006,Duplicate,Potential duplicate payment instruction,HIGH,TRUE,TRUE,2024-01-01,
+R007,System,Processing system unavailable,MEDIUM,FALSE,TRUE,2024-01-01,
+R008,Authorization,Required payment authorization incomplete,HIGH,TRUE,TRUE,2024-01-01,
+R009,Beneficiary,Beneficiary details require review,MEDIUM,TRUE,TRUE,2024-01-01,
+R010,Currency,Currency handling exception,MEDIUM,TRUE,TRUE,2024-01-01,
+R011,Settlement,Settlement confirmation delayed,LOW,FALSE,TRUE,2024-01-01,
+R_EXP,Legacy,Expired legacy exception definition,LOW,FALSE,FALSE,2024-01-01,2025-12-31

@@ -1,0 +1,25 @@
+governance_reference_id,asset_type,asset_identifier,classification,sensitivity_level,permitted_purpose,owner,effective_date,expiry_date,governance_status
+GOVREF_SYN_0001,DATASET,CUSTOMER,RESTRICTED,HIGH,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0002,DATASET,ACCOUNT,RESTRICTED,HIGH,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0003,DATASET,PAYMENT,RESTRICTED,HIGH,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0004,DATASET,PAYMENT_EXCEPTION,RESTRICTED,HIGH,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0005,DATASET,SLA_EVENT,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0006,DATASET,OPERATIONS_TEAM,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0007,DATASET,OPERATIONS_USER,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0008,DATASET,REFERENCE_EXCEPTION_REASON,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0009,DATASET,REFERENCE_PAYMENT_THRESHOLD,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0010,DATASET,GOVERNANCE_REFERENCE,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0011,DOCUMENT,POL-001,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0012,DOCUMENT,PROC-001,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0013,DOCUMENT,PROC-002,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0014,DOCUMENT,POL-002,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0015,DOCUMENT,POL-003,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0016,DOCUMENT,GUID-001,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0017,DOCUMENT,POL-OLD-001,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0018,DOCUMENT,DOC-MAL-001,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0019,SCENARIO,GOVERNANCE_SCENARIO_19,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0020,SCENARIO,GOVERNANCE_SCENARIO_20,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0021,SCENARIO,GOVERNANCE_SCENARIO_21,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0022,SCENARIO,GOVERNANCE_SCENARIO_22,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0023,SCENARIO,GOVERNANCE_SCENARIO_23,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
+GOVREF_SYN_0024,SCENARIO,GOVERNANCE_SCENARIO_24,INTERNAL,MODERATE,Trusted Banking Operations AI demonstration,Synthetic Data Governance,2025-01-01,,APPROVED
